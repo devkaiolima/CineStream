@@ -1,4 +1,4 @@
-package br.com.cineSteam.modulos;
+package br.com.cinesteam.modelos;
 
 public class Serie extends Titulo {
 

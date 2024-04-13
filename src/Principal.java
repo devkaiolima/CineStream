@@ -1,5 +1,6 @@
-import br.com.cineSteam.modulos.Filme;
-import br.com.cineSteam.modulos.Serie;
+import br.com.cinesteam.calculos.CalculadoraDeTempo;
+import br.com.cinesteam.modelos.Filme;
+import br.com.cinesteam.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -9,6 +10,7 @@ public class Principal {
         meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
+
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
@@ -25,5 +27,8 @@ public class Principal {
         friends.setEspisodiosPorTemporada(10);
         friends.setMinutosPorEspisodio(50);
         System.out.println("Duração para assitir: " + friends.getDuracaoEmMinutos());
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        System.out.println(calculadora.getTempoTotal());
     }
 }
