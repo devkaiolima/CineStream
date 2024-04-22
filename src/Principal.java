@@ -1,4 +1,6 @@
 import br.com.cinesteam.calculos.CalculadoraDeTempo;
+import br.com.cinesteam.calculos.FiltroRecomendacao;
+import br.com.cinesteam.modelos.Episodio;
 import br.com.cinesteam.modelos.Filme;
 import br.com.cinesteam.modelos.Serie;
 
@@ -27,8 +29,19 @@ public class Principal {
         friends.setEspisodiosPorTemporada(10);
         friends.setMinutosPorEspisodio(50);
         System.out.println("Duração para assitir: " + friends.getDuracaoEmMinutos());
+
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(meuFilme);
+        calculadora.inclui(friends);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(friends);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
     }
 }
