@@ -11,8 +11,7 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O poderoso chefão", 1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -24,9 +23,7 @@ public class Principal {
         System.out.println("Total de avalizações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.retornaMedia());
 
-        Serie friends = new Serie();
-        friends.setNome("Friends");
-        friends.setAnoDeLancamento(2000);
+        Serie friends = new Serie("Friends", 2000);
         friends.exibeFichaTecnica();
         friends.setTemporadas(10);
         friends.setEspisodiosPorTemporada(10);
@@ -47,14 +44,12 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDoKaio = new Filme("Bad Boys");
+        Filme filmeDoKaio = new Filme("Bad Boys", 2003);
         filmeDoKaio.setDuracaoEmMinutos(200);
-        filmeDoKaio.setAnoDeLancamento(2003);
         filmeDoKaio.avalia(10);
 
-        Filme filmeDoMomento = new Filme("Civil War");
+        Filme filmeDoMomento = new Filme("Civil War", 2024);
         filmeDoMomento.setDuracaoEmMinutos(200);
-        filmeDoMomento.setAnoDeLancamento(2024);
 
 
 
