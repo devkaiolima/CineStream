@@ -4,6 +4,10 @@ import br.com.cinesteam.modelos.Episodio;
 import br.com.cinesteam.modelos.Filme;
 import br.com.cinesteam.modelos.Serie;
 
+import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -43,5 +47,26 @@ public class Principal {
         episodio.setSerie(friends);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+
+        Filme filmeDoKaio = new Filme();
+        filmeDoKaio.setNome("Bad Boys");
+        filmeDoKaio.setDuracaoEmMinutos(200);
+        filmeDoKaio.setAnoDeLancamento(2003);
+        filmeDoKaio.avalia(10);
+
+        Filme filmeDoMomento = new Filme();
+        filmeDoMomento.setNome("Civil War");
+        filmeDoMomento.setDuracaoEmMinutos(200);
+        filmeDoMomento.setAnoDeLancamento(2024);
+
+
+
+        ArrayList<Filme> listaDeFimes = new ArrayList<>();
+        listaDeFimes.add(filmeDoKaio);
+        listaDeFimes.add(meuFilme);
+        listaDeFimes.add(filmeDoMomento);
+        System.out.println("Tamanho da lista " + listaDeFimes.size());
+        System.out.println("Primeiro filme " + listaDeFimes.get(0).getNome());
+        System.out.println(listaDeFimes);
     }
 }
