@@ -11,8 +11,7 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
 
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O podereso chefão");
+        Filme meuFilme = new Filme("O poderoso chefão");
         meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
@@ -48,14 +47,12 @@ public class Principal {
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDoKaio = new Filme();
-        filmeDoKaio.setNome("Bad Boys");
+        Filme filmeDoKaio = new Filme("Bad Boys");
         filmeDoKaio.setDuracaoEmMinutos(200);
         filmeDoKaio.setAnoDeLancamento(2003);
         filmeDoKaio.avalia(10);
 
-        Filme filmeDoMomento = new Filme();
-        filmeDoMomento.setNome("Civil War");
+        Filme filmeDoMomento = new Filme("Civil War");
         filmeDoMomento.setDuracaoEmMinutos(200);
         filmeDoMomento.setAnoDeLancamento(2024);
 
@@ -68,5 +65,7 @@ public class Principal {
         System.out.println("Tamanho da lista " + listaDeFimes.size());
         System.out.println("Primeiro filme " + listaDeFimes.get(0).getNome());
         System.out.println(listaDeFimes);
+
+
     }
 }
