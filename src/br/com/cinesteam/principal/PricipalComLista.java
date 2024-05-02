@@ -4,7 +4,7 @@ import br.com.cinesteam.modelos.Filme;
 import br.com.cinesteam.modelos.Serie;
 import br.com.cinesteam.modelos.Titulo;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class PricipalComLista {
     public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class PricipalComLista {
         Filme filmeDoMomento = new Filme("Civil War", 2024);
         Serie friends = new Serie("Friends", 2000);
 
-        ArrayList<Titulo> lista = new ArrayList<>();
+        List<Titulo> lista = new LinkedList<>();
         lista.add(filmeDoKaio);
         filmeDoKaio.avalia(10);
         lista.add(meuFilme);
@@ -27,5 +27,23 @@ public class PricipalComLista {
                 System.out.println("Classificação " + filme.getClassificacao());
             }
         }
+
+        ArrayList<String> buscarPorArtistas = new ArrayList<>();
+        buscarPorArtistas.add("Adam Sandler");
+        buscarPorArtistas.add("Paul Walker");
+        buscarPorArtistas.add("Jhon");
+
+        Collections.sort(buscarPorArtistas);
+        System.out.println("Depois da Ordenação");
+        System.out.println(buscarPorArtistas);
+
+        Collections.sort(buscarPorArtistas);
+
+        System.out.println("Lista de titulos ordenados");
+        Collections.sort(lista);
+        System.out.println(lista);
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+        System.out.println("Ordenando por ano");
+        System.out.println(lista);
     }
 }
