@@ -1,3 +1,5 @@
+package br.com.cinesteam.principal;
+
 import br.com.cinesteam.calculos.CalculadoraDeTempo;
 import br.com.cinesteam.calculos.FiltroRecomendacao;
 import br.com.cinesteam.modelos.Episodio;
