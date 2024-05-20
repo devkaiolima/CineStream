@@ -8,10 +8,10 @@ import java.util.*;
 
 public class PricipalComLista {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("O poderoso chefão", 1970);
-        Filme filmeDoKaio = new Filme("Bad Boys", 2003);
+        Filme meuFilme = new Filme("O Poderoso Chefão", 1970);
+        Filme filmeDoKaio = new Filme("Bad Boys", 1995);
         Filme filmeDoMomento = new Filme("Civil War", 2024);
-        Serie friends = new Serie("Friends", 2000);
+        Serie friends = new Serie("Friends", 1994);
 
         List<Titulo> lista = new LinkedList<>();
         lista.add(filmeDoKaio);
