@@ -1,5 +1,6 @@
 package br.com.cinesteam.principal;
 
+import br.com.cinesteam.execao.ErroDeConversaoDeAnoException;
 import br.com.cinesteam.modelos.Titulo;
 import br.com.cinesteam.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -19,7 +20,7 @@ public class PrincipalComBusca {
         System.out.println("Digite um filme para busca: ");
         var busca = leitura.nextLine();
 
-        String endereco = "http://www.omdbapi.com/?t=" + busca + "&apikey=dba8bc70";
+        String endereco = "http://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=dba8bc70";
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -45,6 +46,8 @@ public class PrincipalComBusca {
             System.out.println(e.getMessage());
         } catch (IllegalArgumentException e) {
             System.out.println("Algum erro de argumento na base, verifique o endereço");
+        } catch (ErroDeConversaoDeAnoException e){
+            System.out.println(e.getMessage());
         }
 
         System.out.println("O programa finalizou corretamente");
